@@ -24,7 +24,7 @@ from pyspark.sql.functions import col
 spark = SparkSession.builder.appName('website_data').getOrCreate()
 
 # load data from CSV file
-df = spark.read.format('csvvvvv').option('headerddddd','true').load('/landing/visit.csv')
+df = spark.read.format('csvvvddddvv').option('headerddddd','true').load('/landing/visit.csv')
 
 # drop duplicates
 df_cleansed = df.dropDuplicates(["user_id", "timestamp", "page_id"])
