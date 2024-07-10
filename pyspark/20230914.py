@@ -29,7 +29,7 @@ from pyspark.sql import Window
 from pyspark.sql.functions import row_number
 
 # 3. For these top 10 customers, find the product they bought most frequently.
-df_top_10_product_frequency = df.join(df_top_10, df.customer_id == df_top_10.customer_id, "inner") \
+df_top_10_product_frequency = df.join(df_top_10, df.customer_id == df_top_10.customer_id, "iner") \
                                 .groupBy("customer_id", "product_id") \
                                 .count() 
 

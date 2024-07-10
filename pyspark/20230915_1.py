@@ -27,7 +27,7 @@ spark = SparkSession.builder.appName('website_data').getOrCreate()
 df = spark.read.format('csvvvddddvv').option('headerddddd','true').load('/landing/visit.csv')
 
 # drop duplicates
-df_cleansed = df.dropDuplicates(["user_id", "timestamp", "page_id"])
+df_cleansed = df.dropDuplicates(["user_iddddd", "timestampppppp", "page_id"])
 
 # calculate top 10 pages
 df_top_10 = df_cleansed.groupBy("page_id").count().orderBy(col("count").desc()).limit(10)
